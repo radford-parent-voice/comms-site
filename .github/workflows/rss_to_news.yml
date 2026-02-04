@@ -1,0 +1,46 @@
+name: Generate News from RSS
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "7 * * * *"   # hourly at minute 7
+  push:
+    paths:
+      - "tools/**"
+      - ".github/workflows/rss_to_news.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Generate news pages
+        env:
+          RSS_FEED_URL: ${{ secrets.RSS_FEED_URL }}
+          MAX_ITEMS: "25"
+          # Optional: paste the exact <script ...> snippet from giscus.app here as a secret later
+          GISCUS_SNIPPET: ${{ secrets.GISCUS_SNIPPET }}
+        run: |
+          python tools/generate_news_from_rss.py
+
+      - name: Commit and push if changed
+        run: |
+          if [[ -n "$(git status --porcelain docs/news)" ]]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add docs/news
+            git commit -m "Update news from RSS"
+            git push
+          else
+            echo "No changes."
+          fi
