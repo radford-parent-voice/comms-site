@@ -112,7 +112,7 @@ def write_file(path, text):
 
 def main():
     if not FEED_URL:
-        raise SystemExit("RSS_FEED_URL env var is required")
+        raise SystemExit("RSS_FEED env var is required")
 
     xml_text = fetch(FEED_URL)
     items = parse_rss(xml_text)

@@ -26,7 +26,7 @@ jobs:
 
       - name: Generate news pages
         env:
-          RSS_FEED_URL: ${{ secrets.RSS_FEED }}
+          RSS_FEED: ${{ secrets.RSS_FEED }}
           MAX_ITEMS: "25"
           # Optional: paste the exact <script ...> snippet from giscus.app here as a secret later
           GISCUS_SNIPPET: ${{ secrets.GISCUS_SNIPPET }}
