@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>School Communication Feedback</title>
+  <meta name="description" content="A parent-focused space to discuss school communications constructively and improve clarity, consistency, and engagement." />
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; line-height: 1.5; margin: 0; }
+    header, main, footer { max-width: 900px; margin: 0 auto; padding: 18px; }
+    nav a { margin-right: 12px; }
+    .card { border: 1px solid #ddd; border-radius: 10px; padding: 14px; margin: 14px 0; }
+    .muted { color: #555; }
+    .pill { display: inline-block; padding: 2px 10px; border: 1px solid #ccc; border-radius: 999px; font-size: 12px; margin-right: 8px; }
+    hr { border: 0; border-top: 1px solid #eee; margin: 18px 0; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>School Communication Feedback</h1>
+    <p class="muted">
+      A parent-focused space to discuss school communications constructively and improve clarity, consistency, and engagement.
+    </p>
+
+    <nav>
+      <a href="./">Home</a>
+      <a href="./news/">News</a>
+      <a href="./policies/">Policies</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="card">
+      <span class="pill">Purpose</span>
+      <p>
+        This site exists to help parents discuss school communications in a way that is practical and solution-focused.
+        The aim is to identify where messages are unclear, inconsistent, or hard to find — and suggest improvements.
+      </p>
+    </div>
+
+    <div class="card">
+      <span class="pill">Guidelines</span>
+      <ul>
+        <li>Be respectful. Critique the message, not individuals.</li>
+        <li>Keep it specific: quote the part that’s confusing and explain why.</li>
+        <li>Suggest an improvement (wording, structure, timing, where it should live).</li>
+        <li>Avoid personal information about students, staff, or families.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <span class="pill">How comments work</span>
+      <p>
+        Comments are powered by GitHub Discussions (via giscus). To comment, you’ll need a GitHub account.
+        If you prefer not to comment publicly, you can still read along.
+      </p>
+    </div>
+
+    <hr />
+
+    <h2>General comments</h2>
+    <p class="muted">Use this thread for overall feedback about communication quality and how this site should work.</p>
+
+    <div class="giscus"></div>
+
+    <script src="https://giscus.app/client.js"
+        data-repo="radford-parent-voice/comms-site"
+        data-repo-id="R_kgDORIYxUA"
+        data-category="Announcements"
+        data-category-id="DIC_kwDORIYxUM4C13hX"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="preferred_color_scheme"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+    </script>
+  </main>
+
+  <footer class="muted">
+    <hr />
+    <p>
+      Not affiliated with the school. This is a parent/community initiative focused on improving communication.
+    </p>
+  </footer>
+</body>
+</html>
