@@ -31,7 +31,7 @@ jobs:
           # Optional: paste the exact <script ...> snippet from giscus.app here as a secret later
           GISCUS_SNIPPET: ${{ secrets.GISCUS_SNIPPET }}
         run: |
-          python tools/generate_news_from_rss.py
+          python tools/generate_news.py
 
       - name: Commit and push if changed
         run: |
