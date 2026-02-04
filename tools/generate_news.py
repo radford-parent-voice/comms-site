@@ -33,7 +33,7 @@ def parse_rss(xml_text: str):
     for item in channel.findall("item"):
         title = (item.findtext("title") or "").strip()
         link = (item.findtext("link") or "").strip()
-        desc = (item.findtext("description") or "").strip()
+        #desc = (item.findtext("description") or "").strip()
         pub = (item.findtext("pubDate") or "").strip()
 
         # Try to parse pubDate; fall back to now
@@ -45,7 +45,7 @@ def parse_rss(xml_text: str):
         items.append({
             "title": title or "Untitled",
             "link": link,
-            "description": desc,
+            #"description": desc,
             "pubDate": dt,
         })
 
