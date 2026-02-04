@@ -58,21 +58,7 @@ def page_template(title, published, body_html, nav_prefix="../"):
     giscus_block = f"""
 <h2>Comments</h2>
 <div class="giscus"></div>
-<script src="https://giscus.app/client.js"
-        data-repo="radford-parent-voice/comms-site"
-        data-repo-id="R_kgDORIYxUA"
-        data-category="Announcements"
-        data-category-id="DIC_kwDORIYxUM4C13hX"
-        data-mapping="pathname"
-        data-strict="0"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-input-position="bottom"
-        data-theme="preferred_color_scheme"
-        data-lang="en"
-        crossorigin="anonymous"
-        async>
-    </script>
+{GISCUS_SNIPPET}
 """.strip() if GISCUS_SNIPPET else "<p><em>(Comments not configured yet)</em></p>"
 
     return f"""<!doctype html>
